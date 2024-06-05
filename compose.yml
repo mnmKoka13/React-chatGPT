@@ -1,0 +1,14 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - type: bind
+      source: ./app
+      target: /workspace
+    command: /bin/bash -c "cd chatgpt-sample-app && yarn dev"
+    ports:
+      - 3000:3000
+    stdin_open: true #標準入力をコンテナと紐付ける
