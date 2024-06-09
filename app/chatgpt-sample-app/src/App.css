@@ -1,3 +1,8 @@
+section {
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+}
 /* 基本的なHTMLおよびbodyのスタイルをリセットし、全体のフォントと背景を設定 */
 body,
 html {
@@ -44,15 +49,15 @@ html {
 /* メッセージ入力フィールドのスタイリング */
 .message-input {
   flex-grow: 1; /* 利用可能なスペースをすべて使用 */
-  padding: 0.5rem; /* 内側の余白を設定 */
-  border: none; /* 境界線を削除 */
+  padding: 0.75rem; /* 内側の余白を設定 */
+  border: 0.5mm solid gray; /* 境界線を追加 */
   border-radius: 4px; /* 角の丸みを設定 */
   margin-right: 1rem; /* 右側のマージンを設定 */
 }
 
 /* 'Ask'ボタンのスタイリング */
 .send-button {
-  padding: 0.5rem 1rem; /* 内側の余白を設定 */
+  padding: 0.5rem 1.25rem; /* 内側の余白を設定 */
   background: #5d5c61; /* 背景色を設定 */
   color: white; /* テキストの色を白に */
   border: none; /* 境界線を削除 */
@@ -65,40 +70,34 @@ html {
   background: #424242; /* ホバー時の背景色を暗く */
 }
 
-/* チャットメッセージエリアのスタイリング */
 .chat-messages {
-  display: flex; /* Flexbox レイアウトを使用 */
-  flex-direction: column; /* 子要素を縦方向に並べる */
-  align-items: flex-start; /* 応答を左側に揃える */
-  padding: 1rem; /* 内側の余白を設定 */
-  overflow-y: auto; /* 縦スクロールを有効にする */
-  background: #f4f7f6; /* 背景色を設定 */
-  border-radius: 8px; /* 角を丸くする */
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* 内側に影を追加 */
+  max-width: 80%;
+  overflow-y: auto; /* コンテンツがはみ出した場合にスクロールバーを表示 */
+  flex-grow: 1; /* 利用可能なスペースをすべて使用 */
 }
 
-/* 個々のメッセージのスタイリング */
 .message {
-  background: #ffffff; /* 背景色を白に */
-  margin-bottom: 1rem; /* 下部のマージンを設定 */
   padding: 0.75rem 1rem; /* 内側の余白を設定 */
-  border-radius: 18px; /* 角の丸みを大きく設定 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を追加 */
-  max-width: 80%; /* コンテナ内での最大横幅を設定 */
-  word-wrap: break-word; /* 長い単語も折り返す */
+  margin-bottom: 1rem; /* 下部のマージンを設定 */
+  background-color: #ffffff; /* メッセージの背景色を設定 */
+  padding: 0.75rem 1rem;
+  border-radius: 18px; /* 角の丸みを設定 */
+  max-width: 70%; /* メッセージの最大幅を設定 */
 }
 
-/* ユーザーが送信したメッセージのスタイリング */
 .user-message {
-  background: #dbeafe; /* ユーザーのメッセージ用の背景色 */
-  align-self: flex-end; /* ユーザーの質問を右側に配置 */
+  background: #add8e6; /* ユーザーメッセージの背景色を設定 */
+  align-self: flex-end; 
+  flex-direction: row-reverse;
 }
 
-/* ChatGPTの応答用メッセージのスタイリング */
 .gpt-response {
-  background: #bbf7d0; /* 背景色を設定 */
-  white-space: pre-wrap; /* 改行とスペースを保持 */
+  background: #f5f5dc; /* ChatGPTの応答用メッセージの背景色を設定 */
+  align-self: flex-start;
+  justify-self: start;
 }
+
+
 
 /* テキスト用の基本スタイリング */
 .text {
